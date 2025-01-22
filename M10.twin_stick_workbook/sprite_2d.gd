@@ -1,7 +1,7 @@
 extends Sprite2D
 
 const sprite_right := preload("res://player/godot_right.png")
-const sprite_bottom_right := preload("res://player/godot_bottom_right.png") #left
+const sprite_bottom_right := preload("res://player/godot_bottom_right.png") 
 const sprite_bottom := preload("res://player/godot_bottom.png")
 const sprite_up := preload("res://player/godot_up.png")
 const sprite_up_right := preload("res://player/godot_up_right.png")
