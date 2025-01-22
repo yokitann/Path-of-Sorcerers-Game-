@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://3tgu4wnwlm1p"]
+[gd_scene load_steps=5 format=3 uid="uid://bbxro5ne8bbql"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_mfmgw"]
 [ext_resource type="Texture2D" uid="uid://dxe2pniv6kdn4" path="res://weapons/bullets/fire_trail.png" id="2_iygtd"]
