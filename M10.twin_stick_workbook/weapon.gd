@@ -2,9 +2,9 @@ extends Node2D
 
 @export var bullet_scene : PackedScene = preload("res://bullet.tscn")
 
-@export_range (0.0, 360.0, 1.0, "radians_as_degree") var random_range := PI / 10.0
-@export_range (200.0, 1000.0, 1.0) var maximum_range := 1200.0 
-@export_range (200.0, 2000.0, 1.0) var bullet_speed := 1500.0
+@export_range (0.0, 360.0, 1.0, "radians_as_degree") var random_range := PI / 12.0
+@export_range (200.0, 1000.0, 1.0) var maximum_range := 25000.0 
+@export_range (200.0, 2500.0, 1.0) var bullet_speed := 2000.0
 
 func shoot():
 	var bullet: Node = bullet_scene.instantiate()
