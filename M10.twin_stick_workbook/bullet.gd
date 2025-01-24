@@ -6,7 +6,7 @@ extends Area2D
 
 func _physics_process(delta: float) -> void:
 	var movement := speed * delta
-	var direction := Vector2.LEFT.rotated(10.0) * movement
+	var direction := Vector2.RIGHT.rotated(rotation) * movement
 	position += direction
 	
 	distance_traveled += movement 
