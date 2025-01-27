@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_i1v38"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5x5wk"]
-radius = 101.514
+radius = 448.001
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxl3e"]
 radius = 16.0165
@@ -14,14 +14,16 @@ height = 91.9624
 motion_mode = 1
 script = ExtResource("1_hk28e")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("1_i1v38")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="HitBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 rotation = -1.55237
 shape = SubResource("CircleShape2D_5x5wk")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_i1v38")
+debug_color = Color(0.737255, 0.6, 0.701961, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -1)

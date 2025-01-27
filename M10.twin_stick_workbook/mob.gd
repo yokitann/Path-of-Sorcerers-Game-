@@ -1,26 +1,31 @@
 extends CharacterBody2D
 
+@export var max_speed := 500.0
+@export var acceleration := 600.0
+
 var _player: Player = null
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var _HitBox: Area2D = %HitBox
+
+func _ready() -> void:
+	_HitBox.body_entered.connect(func (body: Node) -> void:
+		if body is Player:
+			_player = body
+	)
+	_HitBox.body_exited.connect(func (body: Node) -> void:
+		if body is Player:
+			_player = null
+	)
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	if _player == null:
+		velocity = velocity.move_toward(Vector2.ZERO, acceleration * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		var direction := global_position.direction_to(_player.global_position)
+		var distance := global_position.distance_to(_player.global_position)
+		var speed := max_speed if distance > 100.0 else max_speed * distance / 100.0
+		var desired_velocity := direction * speed
+		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 
 	move_and_slide()
