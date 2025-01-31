@@ -1,22 +1,10 @@
-extends CharacterBody2D
-
-@export var max_speed := 500.0
-@export var acceleration := 600.0
-
-var _player: Player = null
+class_name Mob extends CharacterBody2D
 
 @onready var _HitBox: Area2D = %HitBox
-
-func _ready() -> void:
-	_HitBox.body_entered.connect(func (body: Node) -> void:
-		if body is Player:
-			_player = body
-	)
-	_HitBox.body_exited.connect(func (body: Node) -> void:
-		if body is Player:
-			_player = null
-	)
-
+@export var max_speed := 500.0
+@export var acceleration := 300.0
+@export var health := 100: set = setter_health
+var _player: Player = null
 
 func _physics_process(delta: float) -> void:
 	if _player == null:
@@ -29,3 +17,21 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 
 	move_and_slide()
+
+func _ready() -> void:
+	_HitBox.body_entered.connect(func (body: Node) -> void:
+		if body is Player:
+			_player = body
+	)
+	_HitBox.body_exited.connect(func (body: Node) -> void:
+		if body is Player:
+			_player = null
+	)
+
+func setter_health(new_health: int) -> void: 
+	health = new_health 
+	if health <= 0:
+		die()
+
+func die() -> void:
+	queue_free()

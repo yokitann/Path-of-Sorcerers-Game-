@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://i1dgp7566ecs"]
+[gd_scene load_steps=6 format=3 uid="uid://i1dgp7566ecs"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_hk28e"]
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_i1v38"]
+[ext_resource type="PackedScene" path="res://common/shadow.tscn" id="3_xu3pn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5x5wk"]
 radius = 448.001
@@ -29,3 +30,7 @@ debug_color = Color(0.737255, 0.6, 0.701961, 0.419608)
 position = Vector2(5, -1)
 rotation = -1.60374
 shape = SubResource("CapsuleShape2D_vxl3e")
+
+[node name="Shadow" parent="." instance=ExtResource("3_xu3pn")]
+position = Vector2(0, 55)
+scale = Vector2(1.52778, 1)

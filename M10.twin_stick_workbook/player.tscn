@@ -40,7 +40,6 @@ rotation = -0.304248
 [node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_5omvw")]
 position = Vector2(610.275, 312.639)
 rotation = -0.00850312
-scale = Vector2(1, 1)
 
 [node name="shootleft" type="Marker2D" parent="WeaponPivot/WeaponAnchor/Weapon"]
 position = Vector2(-571.802, -318.336)
@@ -51,11 +50,9 @@ position = Vector2(-563.922, -337.179)
 [node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
 position = Vector2(16.0404, 22.0963)
 rotation = -0.00850312
-scale = Vector2(1, 1)
 texture = ExtResource("6_4bi32")
 
 [node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
 position = Vector2(17.3969, -23.3318)
 rotation = -0.00850312
-scale = Vector2(1, 1)
 texture = ExtResource("6_4bi32")
