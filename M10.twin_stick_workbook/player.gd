@@ -20,6 +20,7 @@ func _ready() -> void:
 func setter_health(new_health: int) -> void: 
 	var previous_health := health
 	health = clampi(new_health, 0, max_health)
+	_HealthBar.value = health
 	if health <= 0:
 		die()
 

@@ -1,9 +1,11 @@
 class_name Mob extends CharacterBody2D
 
 @onready var _HitBox: Area2D = %HitBox
+@onready var _DamageArea: Area2D = %DamageArea
 @export var max_speed := 500.0
 @export var acceleration := 300.0
 @export var health := 100: set = setter_health
+@export var damage := 20
 var _player: Player = null
 
 func _physics_process(delta: float) -> void:
@@ -15,7 +17,6 @@ func _physics_process(delta: float) -> void:
 		var speed := max_speed if distance > 100.0 else max_speed * distance / 100.0
 		var desired_velocity := direction * speed
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
-
 	move_and_slide()
 
 func _ready() -> void:
@@ -26,6 +27,10 @@ func _ready() -> void:
 	_HitBox.body_exited.connect(func (body: Node) -> void:
 		if body is Player:
 			_player = null
+	)
+	_DamageArea.body_entered.connect(func (body: Node) -> void:
+		if body is Player: 
+			body.health -= damage
 	)
 
 func setter_health(new_health: int) -> void: 

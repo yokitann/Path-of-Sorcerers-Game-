@@ -4,6 +4,7 @@ class_name Bullet extends Area2D
 @export var max_range := 800.0
 @export var distance_traveled := 0.0
 @export var damage := 30
+var _mob: Mob
 
 func _physics_process(delta: float) -> void:
 	var movement := speed * delta

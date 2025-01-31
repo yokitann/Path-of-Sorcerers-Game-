@@ -1406,9 +1406,17 @@ cache/0/18/0/glyphs/8/texture_idx = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5x3q"]
 bg_color = Color(1, 0.733333, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nke8i"]
 bg_color = Color(1, 0.733333, 0.403922, 0.552941)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [resource]
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)

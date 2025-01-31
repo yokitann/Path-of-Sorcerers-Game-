@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://i1dgp7566ecs"]
+[gd_scene load_steps=7 format=3 uid="uid://i1dgp7566ecs"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_hk28e"]
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_i1v38"]
@@ -9,7 +9,11 @@ radius = 448.001
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxl3e"]
 radius = 16.0165
-height = 91.9624
+height = 120.067
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksejj"]
+radius = 40.1554
+height = 139.907
 
 [node name="Mob" type="CharacterBody2D"]
 motion_mode = 1
@@ -34,3 +38,12 @@ shape = SubResource("CapsuleShape2D_vxl3e")
 [node name="Shadow" parent="." instance=ExtResource("3_xu3pn")]
 position = Vector2(0, 55)
 scale = Vector2(1.52778, 1)
+
+[node name="DamageArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(4, 1)
+rotation = 1.53441
+shape = SubResource("CapsuleShape2D_ksejj")
+debug_color = Color(0.804105, 0.40331, 0.294579, 0.42)

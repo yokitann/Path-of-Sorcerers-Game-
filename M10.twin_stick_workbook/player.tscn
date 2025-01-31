@@ -7,10 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://d0owolmbn37ba" path="res://weapon.tscn" id="5_5omvw"]
 [ext_resource type="Script" path="res://weapon_pivot.gd" id="5_lwwcy"]
 [ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="6_4bi32"]
-[ext_resource type="Theme" uid="uid://cmlan53njem5p" path="res://ui/health_bar_theme.tres" id="8_tlqao"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mc3cg"]
-radius = 22.0
+radius = 70.4557
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7807r"]
+bg_color = Color(0.945098, 0.709804, 0.917647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0295065, 0.0295066, 0.0295065, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -21,7 +32,7 @@ texture = ExtResource("1_caxqc")
 script = ExtResource("3_vuu2t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 38)
+position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_mc3cg")
 
 [node name="Shadow" parent="." instance=ExtResource("2_hk6ot")]
@@ -64,5 +75,7 @@ offset_left = -59.0
 offset_top = -96.0
 offset_right = 56.0
 offset_bottom = -69.0
-theme = ExtResource("8_tlqao")
-value = 60.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7807r")
+max_value = 10.0
+value = 10.0
+show_percentage = false
