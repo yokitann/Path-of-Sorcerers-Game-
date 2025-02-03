@@ -1,22 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj4pf6a3md3nw"]
+[gd_scene load_steps=9 format=3 uid="uid://bj4pf6a3md3nw"]
 
 [ext_resource type="Script" path="res://pickup.gd" id="1_nukf8"]
-[ext_resource type="Texture2D" uid="uid://be8lmb157qflx" path="res://pickups/pickup_health.png" id="2_e73dk"]
-[ext_resource type="AudioStream" uid="uid://c2woejhi871h1" path="res://pickups/pickup.wav" id="3_c0nf1"]
+[ext_resource type="Script" path="res://item.gd" id="2_f3fjt"]
+[ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="3_w7ai3"]
+
+[sub_resource type="Resource" id="Resource_i1ker"]
+script = ExtResource("2_f3fjt")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_je3yt"]
 radius = 37.054
 
+[sub_resource type="Animation" id="Animation_8e0bp"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_w7ai3"), ExtResource("3_w7ai3"), ExtResource("3_w7ai3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gem:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-250, -181.5), Vector2(-251, -165.5), Vector2(-249, -177.5)]
+}
+
+[sub_resource type="Animation" id="Animation_344d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_w7ai3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gem:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-250, -181.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8ssu"]
+_data = {
+"RESET": SubResource("Animation_344d3"),
+"idle": SubResource("Animation_8e0bp")
+}
+
 [node name="Pickup" type="Area2D"]
+position = Vector2(250, 181)
 script = ExtResource("1_nukf8")
+item = SubResource("Resource_i1ker")
 
 [node name="Gem" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_e73dk")
+position = Vector2(-250, -181.5)
+texture = ExtResource("3_w7ai3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_je3yt")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("3_c0nf1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_j8ssu")
+}
