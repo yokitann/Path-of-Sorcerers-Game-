@@ -8,15 +8,15 @@ extends Area2D
 
 func _ready() -> void:
 	set_item(item)
-	_animation.play("idle")
-	body_entered.connect(func (body: Node2D) -> void:
-		if body is Player:
-			item.use(body)
-			_pickup_sound.play()
-			_animation._animation.stop().connect(func (_animation_name: String) -> void:
-				queue_free()
-			)
-		)
+	#_animation.play("idle")
+	body_entered.connect(_pickup)
+
+func _pickup (body: Node2D) -> void: 
+	if body is Player:
+		item.use(body)
+		_pickup_sound.play()
+		print("sound")
+		queue_free()
 
 func set_item(value: Item) -> void:
 	item = value
@@ -24,4 +24,3 @@ func set_item(value: Item) -> void:
 		_gem.texture = item.texture
 	if _pickup_sound != null:
 		_pickup_sound.stream = item.sound_on_pickup
- 
