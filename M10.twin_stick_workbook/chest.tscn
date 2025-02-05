@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://12dnbpavptvc"]
+[gd_scene load_steps=9 format=3 uid="uid://12dnbpavptvc"]
 
 [ext_resource type="Script" path="res://chest.gd" id="1_ee26v"]
 [ext_resource type="Texture2D" uid="uid://dub7cda3qxho2" path="res://pickups/chest/chest_bottom.png" id="2_xmxo4"]
 [ext_resource type="Texture2D" uid="uid://bfj2ayjhou4bv" path="res://pickups/chest/chest_top.png" id="3_dk4hh"]
+[ext_resource type="PackedScene" uid="uid://bj4pf6a3md3nw" path="res://pickup.tscn" id="4_ofe7j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yheyh"]
 radius = 64.0
@@ -88,3 +89,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ywvvg")
 }
+
+[node name="Pickup" parent="." instance=ExtResource("4_ofe7j")]
+unique_name_in_owner = true
+position = Vector2(251, 190)

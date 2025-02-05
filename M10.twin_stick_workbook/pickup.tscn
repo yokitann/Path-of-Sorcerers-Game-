@@ -8,6 +8,7 @@
 [sub_resource type="Resource" id="Resource_nu3h5"]
 script = ExtResource("2_siggl")
 heal_amount = 100
+texture = ExtResource("3_w7ai3")
 sound_on_pickup = ExtResource("4_dpvkr")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_je3yt"]
@@ -74,7 +75,7 @@ _data = {
 }
 
 [node name="Pickup" type="Area2D"]
-position = Vector2(250, 181)
+position = Vector2(552, 383)
 script = ExtResource("1_nukf8")
 item = SubResource("Resource_nu3h5")
 
