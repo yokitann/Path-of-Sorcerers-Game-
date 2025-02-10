@@ -1,15 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj4pf6a3md3nw"]
+[gd_scene load_steps=8 format=3 uid="uid://bj4pf6a3md3nw"]
 
 [ext_resource type="Script" path="res://pickup.gd" id="1_nukf8"]
-[ext_resource type="Script" path="res://healing_item.gd" id="2_siggl"]
 [ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="3_w7ai3"]
 [ext_resource type="AudioStream" uid="uid://c2woejhi871h1" path="res://pickups/pickup.wav" id="4_dpvkr"]
-
-[sub_resource type="Resource" id="Resource_nu3h5"]
-script = ExtResource("2_siggl")
-heal_amount = 100
-texture = ExtResource("3_w7ai3")
-sound_on_pickup = ExtResource("4_dpvkr")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_je3yt"]
 radius = 37.054
@@ -39,6 +32,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-250, -181.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickupSound:stream:loop_begin")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_8e0bp"]
@@ -75,9 +80,8 @@ _data = {
 }
 
 [node name="Pickup" type="Area2D"]
-position = Vector2(552, 383)
+position = Vector2(248, 181)
 script = ExtResource("1_nukf8")
-item = SubResource("Resource_nu3h5")
 
 [node name="Gem" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -91,7 +95,8 @@ shape = SubResource("CircleShape2D_je3yt")
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_dpvkr")
-volume_db = 0.35
+volume_db = 23.986
+pitch_scale = 3.23
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

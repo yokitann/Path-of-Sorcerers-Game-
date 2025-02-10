@@ -1,9 +1,9 @@
 @tool
-extends Area2D
+class_name Pickup extends Area2D
 
 @export var item: Item = null#: set = set_item
-@onready var _gem: Sprite2D = %Gem
 @onready var _pickup_sound: AudioStreamPlayer2D = %PickupSound
+#@onready var _gem :Sprite2D = %Gem
 #@onready var _animation: AnimationPlayer = %AnimationPlayer
 
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
 	#_animation.play("idle")
 	body_entered.connect(_pickup)
 
-func _pickup (body: Node2D) -> void: 
+func _pickup (body: Node) -> void: 
 	if body is Player:
 		item.use(body)
 		_pickup_sound.play()

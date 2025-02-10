@@ -27,3 +27,4 @@ item = SubResource("Resource_fd5nv")
 position = Vector2(770, 513)
 
 [node name="Mob" parent="." instance=ExtResource("3_wdo2k")]
+position = Vector2(1269, 1044)
