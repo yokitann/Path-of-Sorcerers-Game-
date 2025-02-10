@@ -33,8 +33,8 @@ func _pickup_spawn():
 	add_child(pickup)
 	
 	var random_angle := randf_range(0.0, 3.0 * PI)
-	var random_distance := randf_range(1.0, 0.0)
-	var random_position := Vector2(1.0,0.0).rotated(random_angle) 
+	var random_distance := randf_range(2.0, 0.0)
+	var random_position := Vector2(0.0,7.0).rotated(random_angle) 
 	
 	#var random_angle := randf_range(0.0, 2.0 * PI)
 	#var random_direction := Vector2(1.0, 0.0).rotated(random_angle)

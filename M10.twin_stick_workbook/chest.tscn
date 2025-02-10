@@ -1,11 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://12dnbpavptvc"]
+[gd_scene load_steps=12 format=3 uid="uid://12dnbpavptvc"]
 
 [ext_resource type="Script" path="res://chest.gd" id="1_ee26v"]
+[ext_resource type="Script" path="res://item.gd" id="2_iox6r"]
 [ext_resource type="Texture2D" uid="uid://dub7cda3qxho2" path="res://pickups/chest/chest_bottom.png" id="2_xmxo4"]
 [ext_resource type="Texture2D" uid="uid://bfj2ayjhou4bv" path="res://pickups/chest/chest_top.png" id="3_dk4hh"]
+[ext_resource type="Script" path="res://healing_item.gd" id="3_mgnv8"]
+[ext_resource type="Texture2D" uid="uid://be8lmb157qflx" path="res://pickups/pickup_health.png" id="4_680eh"]
+
+[sub_resource type="Resource" id="Resource_7awto"]
+script = ExtResource("3_mgnv8")
+heal_amount = 100
+texture = ExtResource("4_680eh")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yheyh"]
-radius = 64.0
+radius = 91.0
 
 [sub_resource type="Animation" id="Animation_cwvjg"]
 length = 0.001
@@ -70,9 +78,10 @@ _data = {
 [node name="Chest" type="Area2D"]
 position = Vector2(392, 275)
 script = ExtResource("1_ee26v")
+possible_items = Array[ExtResource("2_iox6r")]([SubResource("Resource_7awto")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 7)
+position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_yheyh")
 
 [node name="ChestBottom" type="Sprite2D" parent="."]
