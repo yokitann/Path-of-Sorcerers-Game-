@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="6_4bi32"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mc3cg"]
-radius = 70.4557
+radius = 32.249
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7807r"]
 bg_color = Color(0.945098, 0.709804, 0.917647, 1)
@@ -32,7 +32,7 @@ texture = ExtResource("1_caxqc")
 script = ExtResource("3_vuu2t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(0, 29)
 shape = SubResource("CircleShape2D_mc3cg")
 
 [node name="Shadow" parent="." instance=ExtResource("2_hk6ot")]

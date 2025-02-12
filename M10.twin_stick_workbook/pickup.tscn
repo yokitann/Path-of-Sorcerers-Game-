@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj4pf6a3md3nw"]
+[gd_scene load_steps=10 format=3 uid="uid://bj4pf6a3md3nw"]
 
 [ext_resource type="Script" path="res://pickup.gd" id="1_nukf8"]
+[ext_resource type="Script" path="res://healing_item.gd" id="2_2237j"]
 [ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="3_w7ai3"]
 [ext_resource type="AudioStream" uid="uid://c2woejhi871h1" path="res://pickups/pickup.wav" id="4_dpvkr"]
+
+[sub_resource type="Resource" id="Resource_cesek"]
+script = ExtResource("2_2237j")
+heal_amount = 100
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_je3yt"]
 radius = 37.054
@@ -82,6 +87,7 @@ _data = {
 [node name="Pickup" type="Area2D"]
 position = Vector2(248, 181)
 script = ExtResource("1_nukf8")
+item = SubResource("Resource_cesek")
 
 [node name="Gem" type="Sprite2D" parent="."]
 unique_name_in_owner = true

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://common/shadow.tscn" id="3_xu3pn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5x5wk"]
-radius = 448.001
+radius = 304.105
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxl3e"]
 radius = 16.0165

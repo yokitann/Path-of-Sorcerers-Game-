@@ -1,0 +1,297 @@
+[gd_scene load_steps=42 format=4 uid="uid://csloask3vk6nc"]
+
+[ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="1_8u0g2"]
+[ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_yov5w"]
+[ext_resource type="PackedScene" uid="uid://diw0kp1e3livt" path="res://levels/rooms/room_d.tscn" id="3_vl6be"]
+[ext_resource type="PackedScene" uid="uid://c3fl3stluv0gn" path="res://levels/bridges.tscn" id="4_gg54u"]
+[ext_resource type="PackedScene" uid="uid://dlxjrgals3rg2" path="res://levels/invisible_walls.tscn" id="5_t718d"]
+[ext_resource type="PackedScene" uid="uid://12dnbpavptvc" path="res://chest.tscn" id="6_5kw40"]
+[ext_resource type="Script" path="res://healing_item.gd" id="6_7joxx"]
+[ext_resource type="PackedScene" uid="uid://s7k716qf814e" path="res://player.tscn" id="6_827ny"]
+[ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="7_enpp3"]
+[ext_resource type="PackedScene" uid="uid://bj4pf6a3md3nw" path="res://pickup.tscn" id="8_1f26p"]
+[ext_resource type="PackedScene" uid="uid://i1dgp7566ecs" path="res://mob.tscn" id="9_cq0lv"]
+[ext_resource type="Texture2D" uid="uid://3jj533p5fg4s" path="res://levels/props/table_small_red.png" id="10_oiwbw"]
+[ext_resource type="Texture2D" uid="uid://c0he43xgt0jjr" path="res://levels/props/table_small_silver.png" id="11_ucwma"]
+[ext_resource type="Texture2D" uid="uid://bw7o1r5k7d6cn" path="res://levels/props/table_medium_green.png" id="13_4t503"]
+[ext_resource type="Texture2D" uid="uid://c4dy8u6q5m507" path="res://levels/props/statue_robot.png" id="14_1ag82"]
+[ext_resource type="Texture2D" uid="uid://bdp7ywxga0yem" path="res://levels/props/books_1.png" id="17_s3mn7"]
+[ext_resource type="Texture2D" uid="uid://dxhbawh7l6wux" path="res://levels/props/gems_green_1.png" id="18_fihih"]
+[ext_resource type="Texture2D" uid="uid://bsw2xiqemlhfp" path="res://levels/props/table_small_pots.png" id="18_gyfa5"]
+[ext_resource type="Texture2D" uid="uid://cemsu0d7gpb1d" path="res://levels/props/statue_hammer.png" id="19_h8esd"]
+[ext_resource type="Texture2D" uid="uid://dk8g56cjxori2" path="res://levels/props/table_medium_blue.png" id="20_nrvhi"]
+[ext_resource type="Texture2D" uid="uid://btgnwrmru84fx" path="res://levels/props/table_medium_red.png" id="21_vd0v4"]
+[ext_resource type="Texture2D" uid="uid://cvjdbqea65810" path="res://levels/props/table_medium_mixed.png" id="22_ytghk"]
+[ext_resource type="Texture2D" uid="uid://dqsx4s3vbcjiv" path="res://levels/props/statue_gems.png" id="23_x2ydo"]
+[ext_resource type="Texture2D" uid="uid://i4qhxpakhily" path="res://levels/props/books_2.png" id="24_42576"]
+[ext_resource type="Texture2D" uid="uid://7g1m04owvvmo" path="res://levels/props/gems_yellow_1.png" id="25_nf2g8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ggyg5"]
+radius = 47.58
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovr81"]
+size = Vector2(138.465, 69.2325)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owyvw"]
+size = Vector2(129.13, 170.358)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bri7a"]
+size = Vector2(105.327, 67.5978)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_badbo"]
+radius = 32.6085
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hydgq"]
+size = Vector2(102.621, 73.4708)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rv31"]
+radius = 37.5961
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrfs4"]
+size = Vector2(124.084, 176.33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0bwm"]
+size = Vector2(133.336, 71.8381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny4dc"]
+size = Vector2(133.076, 66.7122)
+
+[sub_resource type="Resource" id="Resource_udahq"]
+script = ExtResource("6_7joxx")
+heal_amount = 100
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpga5"]
+radius = 46.0103
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcd2v"]
+radius = 46.3785
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb0v0"]
+size = Vector2(147.08, 70.5123)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2yo5"]
+radius = 104.087
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_adyss"]
+radius = 49.1612
+
+[node name="world" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("6_827ny")]
+position = Vector2(1235.48, 1440.27)
+
+[node name="RoomA" parent="." instance=ExtResource("1_yov5w")]
+position = Vector2(1912, -2936)
+
+[node name="Mob2" parent="RoomA" instance=ExtResource("9_cq0lv")]
+position = Vector2(535.559, 384.614)
+rotation = 0.00114604
+
+[node name="Mob3" parent="RoomA" instance=ExtResource("9_cq0lv")]
+position = Vector2(999.394, 529.146)
+rotation = 0.00114604
+
+[node name="Mob4" parent="RoomA" instance=ExtResource("9_cq0lv")]
+position = Vector2(342.945, 920.394)
+rotation = 0.00114604
+
+[node name="Pickup" parent="RoomA" instance=ExtResource("8_1f26p")]
+position = Vector2(943.068, 814.082)
+rotation = 0.00114604
+
+[node name="Pickup2" parent="RoomA" instance=ExtResource("8_1f26p")]
+position = Vector2(615.352, 565.706)
+rotation = 0.00114604
+
+[node name="Chest" parent="RoomA" instance=ExtResource("6_5kw40")]
+position = Vector2(743.788, 184.853)
+rotation = 0.00114604
+
+[node name="TableSmallRed" type="Sprite2D" parent="RoomA"]
+position = Vector2(370.255, 1149.51)
+rotation = 0.00114604
+texture = ExtResource("10_oiwbw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomA/TableSmallRed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomA/TableSmallRed/StaticBody2D"]
+position = Vector2(-1.55591, 7.00098)
+shape = SubResource("CircleShape2D_ggyg5")
+
+[node name="TableMediumMixed" type="Sprite2D" parent="RoomA"]
+position = Vector2(1282.71, 234.61)
+rotation = 0.00114604
+texture = ExtResource("22_ytghk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomA/TableMediumMixed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomA/TableMediumMixed/StaticBody2D"]
+position = Vector2(1.50537, 9.35962)
+shape = SubResource("RectangleShape2D_ovr81")
+
+[node name="StatueGems" type="Sprite2D" parent="RoomA"]
+position = Vector2(219.44, 201.65)
+rotation = 0.00114604
+texture = ExtResource("23_x2ydo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomA/StatueGems"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomA/StatueGems/StaticBody2D"]
+position = Vector2(3.146, 22.4314)
+shape = SubResource("RectangleShape2D_owyvw")
+
+[node name="Books2" type="Sprite2D" parent="RoomA"]
+position = Vector2(764.989, 936.844)
+rotation = 0.00114604
+texture = ExtResource("24_42576")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomA/Books2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomA/Books2/StaticBody2D"]
+position = Vector2(-1.14893, 2.74414)
+shape = SubResource("RectangleShape2D_bri7a")
+
+[node name="GemsYellow1" type="Sprite2D" parent="RoomA"]
+position = Vector2(856.197, 950.497)
+rotation = 0.00114604
+texture = ExtResource("25_nf2g8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomA/GemsYellow1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomA/GemsYellow1/StaticBody2D"]
+shape = SubResource("CircleShape2D_badbo")
+
+[node name="RoomB" parent="." instance=ExtResource("1_8u0g2")]
+position = Vector2(3200, -120)
+
+[node name="Mob" parent="RoomB" instance=ExtResource("9_cq0lv")]
+position = Vector2(872, 256)
+
+[node name="Chest" parent="RoomB" instance=ExtResource("6_5kw40")]
+position = Vector2(1064, 704)
+
+[node name="Books1" type="Sprite2D" parent="RoomB"]
+position = Vector2(566.672, 22.3715)
+scale = Vector2(1.17202, 1)
+texture = ExtResource("17_s3mn7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomB/Books1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomB/Books1/StaticBody2D"]
+position = Vector2(-0.993896, -0.28688)
+shape = SubResource("RectangleShape2D_hydgq")
+
+[node name="GemsGreen1" type="Sprite2D" parent="RoomB"]
+position = Vector2(961.64, 516.799)
+texture = ExtResource("18_fihih")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomB/GemsGreen1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomB/GemsGreen1/StaticBody2D"]
+shape = SubResource("CircleShape2D_6rv31")
+
+[node name="StatueHammer" type="Sprite2D" parent="RoomB"]
+position = Vector2(570.697, 631.782)
+texture = ExtResource("19_h8esd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomB/StatueHammer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomB/StatueHammer/StaticBody2D"]
+position = Vector2(0.74707, 24.0553)
+shape = SubResource("RectangleShape2D_nrfs4")
+
+[node name="TableMediumBlue" type="Sprite2D" parent="RoomB"]
+position = Vector2(152.158, 730.668)
+texture = ExtResource("20_nrvhi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomB/TableMediumBlue"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomB/TableMediumBlue/StaticBody2D"]
+position = Vector2(0.723145, 4.95361)
+shape = SubResource("RectangleShape2D_q0bwm")
+
+[node name="TableMediumRed" type="Sprite2D" parent="RoomB"]
+position = Vector2(1311.19, 374.22)
+texture = ExtResource("21_vd0v4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomB/TableMediumRed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomB/TableMediumRed/StaticBody2D"]
+position = Vector2(-1.53027, 4.08383)
+shape = SubResource("RectangleShape2D_ny4dc")
+
+[node name="RoomD" parent="." instance=ExtResource("3_vl6be")]
+position = Vector2(384, 256)
+
+[node name="Pickup" parent="RoomD" instance=ExtResource("8_1f26p")]
+position = Vector2(1071.58, 366.228)
+rotation = 0.00114604
+item = SubResource("Resource_udahq")
+
+[node name="Mob" parent="RoomD" instance=ExtResource("9_cq0lv")]
+position = Vector2(366.982, 888.421)
+rotation = 0.00114604
+
+[node name="TableSmallRed" type="Sprite2D" parent="RoomD"]
+position = Vector2(832.081, 1374.4)
+rotation = 0.00114604
+texture = ExtResource("10_oiwbw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomD/TableSmallRed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomD/TableSmallRed/StaticBody2D"]
+position = Vector2(-1.12708, 7.32568)
+shape = SubResource("CircleShape2D_kpga5")
+
+[node name="TableSmallSilver" type="Sprite2D" parent="RoomD"]
+position = Vector2(947.368, 1349.21)
+rotation = 0.00114604
+texture = ExtResource("11_ucwma")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomD/TableSmallSilver"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomD/TableSmallSilver/StaticBody2D"]
+position = Vector2(-0.563477, 7.32581)
+shape = SubResource("CircleShape2D_jcd2v")
+
+[node name="TableMediumGreen" type="Sprite2D" parent="RoomD"]
+position = Vector2(120.145, 1260.95)
+rotation = 0.00114604
+texture = ExtResource("13_4t503")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomD/TableMediumGreen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomD/TableMediumGreen/StaticBody2D"]
+position = Vector2(-4.94684, 9.47754)
+shape = SubResource("RectangleShape2D_yb0v0")
+
+[node name="StatueRobot" type="Sprite2D" parent="RoomD"]
+position = Vector2(1277.93, 526.634)
+rotation = 0.00114604
+texture = ExtResource("14_1ag82")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomD/StatueRobot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomD/StatueRobot/StaticBody2D"]
+position = Vector2(0.563477, 20.8504)
+shape = SubResource("CircleShape2D_k2yo5")
+
+[node name="TableSmallPots" type="Sprite2D" parent="RoomD"]
+position = Vector2(347.126, 240.67)
+rotation = 0.00114604
+texture = ExtResource("18_gyfa5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomD/TableSmallPots"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomD/TableSmallPots/StaticBody2D"]
+shape = SubResource("CircleShape2D_adyss")
+
+[node name="Bridges" parent="." instance=ExtResource("4_gg54u")]
+tile_map_data = PackedByteArray("AAAJAAEAAAADAAEAAAAJAAAAAAADAAEAAAAJAP//AAADAAEAAAAJAP7/AAADAAEAAAAJAP3/AAADAAEAAAAJAPz/AAADAAEAAAAKAPz/AAADAAEAAAALAPz/AAADAAEAAAAMAPz/AAADAAEAAAANAPz/AAADAAEAAAAOAPz/AAADAAEAAAAPAPz/AAADAAEAAAAQAPz/AAADAAEAAAARAPz/AAADAAEAAAASAPz/AAADAAEAAAATAPz/AAADAAEAAAATAP3/AAADAAEAAAATAP7/AAADAAEAAAATAP//AAADAAEAAAATAAAAAAADAAEAAAATAAEAAAADAAEAAAATAAIAAAADAAEAAAATAAMAAAADAAEAAAAUAAMAAAADAAEAAAAVAAMAAAADAAEAAAAWAAMAAAADAAEAAAAXAAMAAAADAAEAAAAYAAMAAAADAAEAAAAgAP7/AAAAAAAAAAAgAP3/AAAAAAAAAAAgAPz/AAAAAAAAAAAgAPv/AAAAAAAAAAAgAPr/AAAAAAAAAAAgAPn/AAAAAAAAAAAfAPn/AAAAAAAAAAAeAPn/AAAAAAAAAAAdAPn/AAAAAAAAAAAcAPn/AAAAAAAAAAAbAPn/AAAAAAAAAAAaAPn/AAAAAAAAAAAZAPn/AAAAAAAAAAAYAPn/AAAAAAAAAAAXAPn/AAAAAAAAAAAWAPn/AAAAAAAAAAAVAPn/AAAAAAAAAAAVAPj/AAADAAEAAAAVAPf/AAADAAEAAAAVAPb/AAADAAEAAAAVAPX/AAADAAEAAAAVAPT/AAADAAEAAAAVAPP/AAADAAEAAAA=")
+
+[node name="InvisibleWalls" parent="." instance=ExtResource("5_t718d")]
+visible = false
+tile_map_data = PackedByteArray("AAAKAAAAAAAAAAAAAAAKAP//AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP3/AAAAAAAAAAALAP3/AAAAAAAAAAAMAP3/AAAAAAAAAAANAP3/AAAAAAAAAAAOAP3/AAAAAAAAAAAPAP3/AAAAAAAAAAAQAP3/AAAAAAAAAAARAP3/AAAAAAAAAAASAP3/AAAAAAAAAAASAP7/AAAAAAAAAAASAP//AAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAVAAQAAAAAAAAAAAAWAAQAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAP//AAAAAAAAAAAUAP7/AAAAAAAAAAAUAP3/AAAAAAAAAAAUAPz/AAAAAAAAAAAUAPv/AAAAAAAAAAATAPv/AAAAAAAAAAASAPv/AAAAAAAAAAARAPv/AAAAAAAAAAAQAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAOAPv/AAAAAAAAAAANAPv/AAAAAAAAAAAMAPv/AAAAAAAAAAALAPv/AAAAAAAAAAAKAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAfAP3/AAAAAAAAAAAfAPz/AAAAAAAAAAAfAPv/AAAAAAAAAAAfAPr/AAAAAAAAAAAeAPr/AAAAAAAAAAAdAPr/AAAAAAAAAAAcAPr/AAAAAAAAAAAbAPr/AAAAAAAAAAAaAPr/AAAAAAAAAAAZAPr/AAAAAAAAAAAYAPr/AAAAAAAAAAAXAPr/AAAAAAAAAAAWAPr/AAAAAAAAAAAVAPr/AAAAAAAAAAAUAPT/AAAAAAAAAAAUAPX/AAAAAAAAAAAUAPb/AAAAAAAAAAAUAPf/AAAAAAAAAAAUAPj/AAAAAAAAAAAUAPn/AAAAAAAAAAAUAPr/AAAAAAAAAAAWAPT/AAAAAAAAAAAWAPX/AAAAAAAAAAAWAPb/AAAAAAAAAAAWAPf/AAAAAAAAAAAWAPj/AAAAAAAAAAAXAPj/AAAAAAAAAAAYAPj/AAAAAAAAAAAZAPj/AAAAAAAAAAAaAPj/AAAAAAAAAAAbAPj/AAAAAAAAAAAcAPj/AAAAAAAAAAAdAPj/AAAAAAAAAAAeAPj/AAAAAAAAAAAfAPj/AAAAAAAAAAAgAPj/AAAAAAAAAAAhAPj/AAAAAAAAAAAhAPn/AAAAAAAAAAAhAPr/AAAAAAAAAAAhAPv/AAAAAAAAAAAhAPz/AAAAAAAAAAAhAP3/AAAAAAAAAAAhAP7/AAAAAAAAAAAaAO3/AAAAAAAAAAA=")
+
+[node name="BackgroundBlueSky" parent="." instance=ExtResource("7_enpp3")]
