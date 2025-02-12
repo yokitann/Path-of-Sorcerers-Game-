@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=4 uid="uid://cn0bj7oqr6hoa"]
+
+[ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="1_mbing"]
+[ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="2_4r0ro"]
+[ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="3_bxebw"]
+[ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="4_05tv4"]
+[ext_resource type="PackedScene" uid="uid://c3fl3stluv0gn" path="res://levels/bridges.tscn" id="5_nrvof"]
+[ext_resource type="PackedScene" uid="uid://i1dgp7566ecs" path="res://mob.tscn" id="6_nviwl"]
+[ext_resource type="PackedScene" uid="uid://12dnbpavptvc" path="res://chest.tscn" id="7_dl4v4"]
+[ext_resource type="PackedScene" uid="uid://s7k716qf814e" path="res://player.tscn" id="8_i8nch"]
+[ext_resource type="PackedScene" uid="uid://dlxjrgals3rg2" path="res://levels/invisible_walls.tscn" id="9_1u1mq"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(-104, -72)
+
+[node name="BackgroundBlueSky" parent="." instance=ExtResource("1_mbing")]
+
+[node name="RoomA" parent="." instance=ExtResource("2_4r0ro")]
+position = Vector2(104, 104)
+
+[node name="RoomB" parent="." instance=ExtResource("3_bxebw")]
+position = Vector2(2408, 360)
+
+[node name="RoomC" parent="." instance=ExtResource("4_05tv4")]
+position = Vector2(1888, -2024)
+
+[node name="Bridges" parent="." instance=ExtResource("5_nrvof")]
+position = Vector2(1768, 1768)
+tile_map_data = PackedByteArray("AAD+//f/AAAAAAEAAAD///f/AAABAAEAAAAAAPf/AAAAAAEAAAABAPf/AAABAAEAAAACAPf/AAADAAAAAAACAPj/AAADAAEAAAACAPn/AAAEAAEAAAADAPn/AAAAAAEAAAAEAPn/AAABAAEAAAAMAPT/AAAEAAEAAAAMAPP/AAAEAAEAAAAMAPL/AAAAAAAAAAALAPL/AAABAAEAAAAKAPL/AAACAAAAAAAKAPH/AAADAAEAAAAKAPD/AAADAAEAAAAKAO//AAADAAEAAAAKAO7/AAADAAEAAAAKAO3/AAADAAEAAAA=")
+
+[node name="Mob" parent="." instance=ExtResource("6_nviwl")]
+position = Vector2(896, 720)
+
+[node name="Mob2" parent="." instance=ExtResource("6_nviwl")]
+position = Vector2(2536, -1632)
+
+[node name="Mob3" parent="." instance=ExtResource("6_nviwl")]
+position = Vector2(2364, -1424)
+
+[node name="Mob4" parent="." instance=ExtResource("6_nviwl")]
+position = Vector2(2688, -1416)
+
+[node name="Chest" parent="." instance=ExtResource("7_dl4v4")]
+position = Vector2(2856, 699)
+
+[node name="Player" parent="." instance=ExtResource("8_i8nch")]
+position = Vector2(424, 1024)
+
+[node name="Chest2" parent="." instance=ExtResource("7_dl4v4")]
+position = Vector2(416, 808)
+
+[node name="InvisibleWalls" parent="." instance=ExtResource("9_1u1mq")]
+position = Vector2(1928, 1272)

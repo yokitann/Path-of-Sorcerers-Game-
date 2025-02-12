@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://12dnbpavptvc"]
+[gd_scene load_steps=13 format=3 uid="uid://12dnbpavptvc"]
 
 [ext_resource type="Script" path="res://chest.gd" id="1_ee26v"]
 [ext_resource type="Script" path="res://item.gd" id="2_iox6r"]
@@ -6,11 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bfj2ayjhou4bv" path="res://pickups/chest/chest_top.png" id="3_dk4hh"]
 [ext_resource type="Script" path="res://healing_item.gd" id="3_mgnv8"]
 [ext_resource type="Texture2D" uid="uid://be8lmb157qflx" path="res://pickups/pickup_health.png" id="4_680eh"]
+[ext_resource type="AudioStream" uid="uid://c2woejhi871h1" path="res://pickups/pickup.wav" id="4_m1c6c"]
 
 [sub_resource type="Resource" id="Resource_7awto"]
 script = ExtResource("3_mgnv8")
 heal_amount = 100
 texture = ExtResource("4_680eh")
+sound_on_pickup = ExtResource("4_m1c6c")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yheyh"]
 radius = 91.0
