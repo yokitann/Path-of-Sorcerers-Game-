@@ -14,9 +14,10 @@ func _ready() -> void:
 func _pickup (body: Node) -> void: 
 	if body is Player:
 		item.use(body)
+		queue_free()
+	if _pickup_sound != null:
 		_pickup_sound.play()
 		print("sound")
-		queue_free()
 
 #func set_item(value: Item) -> void:
 	#item = value

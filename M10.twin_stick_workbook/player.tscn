@@ -28,19 +28,22 @@ motion_mode = 1
 script = ExtResource("1_ews0n")
 
 [node name="Character" type="Sprite2D" parent="."]
+position = Vector2(1, -67)
 texture = ExtResource("1_caxqc")
 script = ExtResource("3_vuu2t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 29)
+position = Vector2(1, -38)
 shape = SubResource("CircleShape2D_mc3cg")
 
 [node name="Shadow" parent="." instance=ExtResource("2_hk6ot")]
-position = Vector2(-1, 53)
+position = Vector2(0, -14)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -67)
 
 [node name="WeaponPivot" type="Node2D" parent="."]
+position = Vector2(1, -67)
 rotation = -0.541038
 script = ExtResource("5_lwwcy")
 
@@ -71,10 +74,10 @@ texture = ExtResource("6_4bi32")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = -59.0
-offset_top = -96.0
-offset_right = 56.0
-offset_bottom = -69.0
+offset_left = -58.0
+offset_top = -163.0
+offset_right = 57.0
+offset_bottom = -136.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_7807r")
 max_value = 10.0
 value = 10.0

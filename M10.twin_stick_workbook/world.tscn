@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=4 uid="uid://csloask3vk6nc"]
+[gd_scene load_steps=45 format=4 uid="uid://csloask3vk6nc"]
 
 [ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="1_8u0g2"]
+[ext_resource type="Script" path="res://world.gd" id="1_dxir0"]
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_yov5w"]
 [ext_resource type="PackedScene" uid="uid://diw0kp1e3livt" path="res://levels/rooms/room_d.tscn" id="3_vl6be"]
 [ext_resource type="PackedScene" uid="uid://c3fl3stluv0gn" path="res://levels/bridges.tscn" id="4_gg54u"]
@@ -25,7 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://dqsx4s3vbcjiv" path="res://levels/props/statue_gems.png" id="23_x2ydo"]
 [ext_resource type="Texture2D" uid="uid://i4qhxpakhily" path="res://levels/props/books_2.png" id="24_42576"]
 [ext_resource type="Texture2D" uid="uid://7g1m04owvvmo" path="res://levels/props/gems_yellow_1.png" id="25_nf2g8"]
-[ext_resource type="Script" path="res://end_screen.gd" id="26_0jsnq"]
+[ext_resource type="PackedScene" uid="uid://c4ap5of7pgqe7" path="res://end_screen.tscn" id="26_u20ij"]
+[ext_resource type="PackedScene" uid="uid://c8ok02omrb2fg" path="res://teleport.tscn" id="27_3ja88"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ggyg5"]
 radius = 47.58
@@ -76,22 +78,19 @@ radius = 104.087
 [sub_resource type="CircleShape2D" id="CircleShape2D_adyss"]
 radius = 49.1612
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8dfs"]
-bg_color = Color(0.812637, 0.468909, 0.675679, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m1un"]
-bg_color = Color(0.799415, 0.499349, 0.572009, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v02cm"]
-bg_color = Color(0.811765, 0.470588, 0.67451, 1)
-
-[sub_resource type="Theme" id="Theme_g3sbg"]
-Button/styles/hover = SubResource("StyleBoxFlat_t8dfs")
-Button/styles/normal = SubResource("StyleBoxFlat_6m1un")
-Button/styles/pressed = SubResource("StyleBoxFlat_v02cm")
-
 [node name="world" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_dxir0")
+
+[node name="EndScreen" parent="." instance=ExtResource("26_u20ij")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Teleport" parent="CanvasLayer" instance=ExtResource("27_3ja88")]
+unique_name_in_owner = true
+position = Vector2(1260.87, 703.433)
 
 [node name="Player" parent="." instance=ExtResource("6_827ny")]
 position = Vector2(1235.48, 1440.27)
@@ -237,7 +236,7 @@ position = Vector2(-1.53027, 4.08383)
 shape = SubResource("RectangleShape2D_ny4dc")
 
 [node name="RoomD" parent="." instance=ExtResource("3_vl6be")]
-position = Vector2(384, 256)
+position = Vector2(437.331, 242.667)
 
 [node name="Pickup" parent="RoomD" instance=ExtResource("8_1f26p")]
 position = Vector2(1071.58, 366.228)
@@ -310,59 +309,3 @@ visible = false
 tile_map_data = PackedByteArray("AAAKAAAAAAAAAAAAAAAKAP//AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP3/AAAAAAAAAAALAP3/AAAAAAAAAAAMAP3/AAAAAAAAAAANAP3/AAAAAAAAAAAOAP3/AAAAAAAAAAAPAP3/AAAAAAAAAAAQAP3/AAAAAAAAAAARAP3/AAAAAAAAAAASAP3/AAAAAAAAAAASAP7/AAAAAAAAAAASAP//AAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAVAAQAAAAAAAAAAAAWAAQAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAP//AAAAAAAAAAAUAP7/AAAAAAAAAAAUAP3/AAAAAAAAAAAUAPz/AAAAAAAAAAAUAPv/AAAAAAAAAAATAPv/AAAAAAAAAAASAPv/AAAAAAAAAAARAPv/AAAAAAAAAAAQAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAOAPv/AAAAAAAAAAANAPv/AAAAAAAAAAAMAPv/AAAAAAAAAAALAPv/AAAAAAAAAAAKAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAfAP3/AAAAAAAAAAAfAPz/AAAAAAAAAAAfAPv/AAAAAAAAAAAfAPr/AAAAAAAAAAAeAPr/AAAAAAAAAAAdAPr/AAAAAAAAAAAcAPr/AAAAAAAAAAAbAPr/AAAAAAAAAAAaAPr/AAAAAAAAAAAZAPr/AAAAAAAAAAAYAPr/AAAAAAAAAAAXAPr/AAAAAAAAAAAWAPr/AAAAAAAAAAAVAPr/AAAAAAAAAAAUAPT/AAAAAAAAAAAUAPX/AAAAAAAAAAAUAPb/AAAAAAAAAAAUAPf/AAAAAAAAAAAUAPj/AAAAAAAAAAAUAPn/AAAAAAAAAAAUAPr/AAAAAAAAAAAWAPT/AAAAAAAAAAAWAPX/AAAAAAAAAAAWAPb/AAAAAAAAAAAWAPf/AAAAAAAAAAAWAPj/AAAAAAAAAAAXAPj/AAAAAAAAAAAYAPj/AAAAAAAAAAAZAPj/AAAAAAAAAAAaAPj/AAAAAAAAAAAbAPj/AAAAAAAAAAAcAPj/AAAAAAAAAAAdAPj/AAAAAAAAAAAeAPj/AAAAAAAAAAAfAPj/AAAAAAAAAAAgAPj/AAAAAAAAAAAhAPj/AAAAAAAAAAAhAPn/AAAAAAAAAAAhAPr/AAAAAAAAAAAhAPv/AAAAAAAAAAAhAPz/AAAAAAAAAAAhAP3/AAAAAAAAAAAhAP7/AAAAAAAAAAAaAO3/AAAAAAAAAAA=")
 
 [node name="BackgroundBlueSky" parent="." instance=ExtResource("7_enpp3")]
-
-[node name="EndScreen" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_g3sbg")
-script = ExtResource("26_0jsnq")
-
-[node name="PanelContainer" type="PanelContainer" parent="EndScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -60.0
-offset_right = 221.0
-offset_bottom = 70.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Title" type="Label" parent="EndScreen/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "You Won! RAHHHHH"
-
-[node name="Timer" type="Label" parent="EndScreen/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Time:"
-
-[node name="CenterContainer" type="CenterContainer" parent="EndScreen/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen/PanelContainer/VBoxContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="PlayAgainButton" type="Button" parent="EndScreen/PanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play again
-"
-flat = true
-
-[node name="QuitButton" type="Button" parent="EndScreen/PanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit
-"
-flat = true

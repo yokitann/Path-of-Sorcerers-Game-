@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4ap5of7pgqe7"]
+
+[ext_resource type="Script" path="res://end_screen.gd" id="1_jqge6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8dfs"]
+bg_color = Color(0.812637, 0.468909, 0.675679, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m1un"]
+bg_color = Color(0.799415, 0.499349, 0.572009, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v02cm"]
+bg_color = Color(0.811765, 0.470588, 0.67451, 1)
+
+[sub_resource type="Theme" id="Theme_g3sbg"]
+Button/styles/hover = SubResource("StyleBoxFlat_t8dfs")
+Button/styles/normal = SubResource("StyleBoxFlat_6m1un")
+Button/styles/pressed = SubResource("StyleBoxFlat_v02cm")
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g3sbg")
+script = ExtResource("1_jqge6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -60.0
+offset_right = 221.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "You Won! RAHHHHH"
+
+[node name="Timer" type="Label" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="PlayAgainButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play again
+"
+flat = true
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+flat = true
