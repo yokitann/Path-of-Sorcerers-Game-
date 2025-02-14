@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var speed := 460.0
+@export var speed := 500.0
 @export var steering_factor := 10.0
 @export var max_health := 100
 @onready var _HealthBar: ProgressBar = %HealthBar
