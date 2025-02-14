@@ -8,7 +8,3 @@ func _ready() -> void:
 		if body is Player:
 			_end_screen.end_game()
 	)
-
-#func _ready() -> void:
-	#await get_tree().create_timer(9.0).timeout  
-	#_end_screen.end_game()

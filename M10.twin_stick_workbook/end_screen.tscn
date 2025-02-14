@@ -27,6 +27,15 @@ size_flags_horizontal = 4
 theme = SubResource("Theme_g3sbg")
 script = ExtResource("1_jqge6")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.878431, 0.541176, 0.803922, 0.298039)
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -35,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -247.0
-offset_top = -89.5
-offset_right = 247.0
-offset_bottom = 89.5
+offset_left = -246.002
+offset_top = -88.502
+offset_right = 353.998
+offset_bottom = 151.498
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -49,19 +58,19 @@ size_flags_horizontal = 4
 [node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "You Won! RAHHHHH"
 
 [node name="Timer" type="Label" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 
 [node name="PlayAgainButton" type="Button" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "Play again
 "
 flat = true
@@ -69,7 +78,7 @@ flat = true
 [node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "Quit
 "
 flat = true
