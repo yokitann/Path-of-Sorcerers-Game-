@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6068nufhb46n"]
+
+[ext_resource type="Texture2D" uid="uid://cwurq7yvv5xdu" path="res://teleporter/teleporter_base.png" id="1_5raxq"]
+[ext_resource type="Texture2D" uid="uid://cb5e2w7i8756i" path="res://teleporter/teleporter_beam_green.png" id="2_twcw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuwgy"]
+size = Vector2(179, 185)
+
+[node name="Teleport" type="Area2D"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_kuwgy")
+debug_color = Color(0.687339, 0.4083, 0.74831, 0.42)
+
+[node name="Teleporter" type="Sprite2D" parent="."]
+texture = ExtResource("1_5raxq")
+
+[node name="GreenLight" type="Sprite2D" parent="."]
+texture = ExtResource("2_twcw0")
